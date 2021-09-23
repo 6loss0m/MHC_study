@@ -20,3 +20,4 @@
      - https://programmers.co.kr/learn/challenges
   2. 시간복잡도 공부해서 정리해오기(자료 필수)
   3. 이번에야 말로 정말 코드업 문제 다 풀어오기
+  4. 개인 깃허브 Readme 꾸며보기
