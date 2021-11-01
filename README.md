@@ -48,7 +48,7 @@
  
  ### 2021.11.01 ~ 2021.11.04
  1. 밀린 문제들 풀어오기(백준, 프로그래머스)
-    -https://www.acmicpc.net/step
+    - https://www.acmicpc.net/step
  2. 프로그래머스 해시 풀기
     - https://programmers.co.kr/learn/challenges
  3. 시간복잡도 공부하기!!!!!!!!!!!!!!! 제발 !!!!!!!!!!!!! plz
