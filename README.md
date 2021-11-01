@@ -47,3 +47,4 @@
  2. 프로그래머스 해시 풀기
     - https://programmers.co.kr/learn/challenges
  3. 시간복잡도 공부하기!!!!!!!!!!!!!!! 제발 !!!!!!!!!!!!! plz
+    - 자료 정리해서 올리기
