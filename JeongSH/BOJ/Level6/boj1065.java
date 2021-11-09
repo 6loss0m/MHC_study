@@ -24,15 +24,15 @@ public class boj1065 {
     }
     public static boolean isHanSu(int input){
         String stringInput;
-        if(input<100){return true;}
-        stringInput = String.valueOf(input);
-        int befor = Integer.parseInt(String.valueOf(stringInput.charAt(0)));
-        int after = Integer.parseInt(String.valueOf(stringInput.charAt(1)));
-        int dif=befor-after;
-        for(int i=2; i<stringInput.length(); i++){
-            befor = Integer.parseInt(String.valueOf(stringInput.charAt(i-1)));
-            after = Integer.parseInt(String.valueOf(stringInput.charAt(i)));
-            if(dif!=(befor-after))return false;
+            if(input<100){return true;}
+            stringInput = String.valueOf(input);
+            int befor = Integer.parseInt(String.valueOf(stringInput.charAt(0)));
+            int after = Integer.parseInt(String.valueOf(stringInput.charAt(1)));
+            int dif=befor-after;
+            for(int i=2; i<stringInput.length(); i++){
+                befor = Integer.parseInt(String.valueOf(stringInput.charAt(i-1)));
+                after = Integer.parseInt(String.valueOf(stringInput.charAt(i)));
+                if(dif!=(befor-after))return false;
         }
         return true;
     }
