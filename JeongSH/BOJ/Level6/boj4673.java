@@ -28,8 +28,6 @@ public class boj4673 {
         for(int i=1;i<=target; i++){
             if(booleans[i]==false) bw.write(String.valueOf(i)+"\n");
         }
-        bw.close();
-
     }
     public static int selfNumber(int n){
         String stringN = String.valueOf(n);

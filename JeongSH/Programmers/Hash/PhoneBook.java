@@ -32,6 +32,7 @@ public class PhoneBook {
             // substring(start,end) start는 시작 인덱스 end는 end인덱스 바로전까지 자르는 메소드
             // i=0 j=2 일 경우 phoneBook[i].substring(0,j) 는 문자열 "11"이 됩니다.
             // 자기자신이 key로 포함되는지 탐색하는 부분을 방지하기 위해.
+            
             for(int i=0; i<phoneBook.length; i++){
                 for(int j=0; j<phoneBook[i].length(); j++){
                     if(hashMap.containsKey(phoneBook[i].substring(0,j)))
