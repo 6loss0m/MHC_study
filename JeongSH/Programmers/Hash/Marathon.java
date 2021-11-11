@@ -1,6 +1,8 @@
 import java.util.LinkedHashMap;
 import java.util.Map;
-
+/*
+    시간복잡도: O(n)
+ */
 public class Marathon {
     public static void main(String args[]){
         
