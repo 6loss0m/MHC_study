@@ -1,5 +1,6 @@
 public class PhoneBook {
 
+    // 시간복잡도1 : O(n^2)
     //Hash없이 풀어본 방식.
     public static void main(String args[]){
         // testcase
@@ -17,6 +18,9 @@ public class PhoneBook {
         System.out.println(result);
     }
 
+
+
+    // 시간복잡도2 : O(n^2)
     //hash사용하여 풀어본 방식
     public class PhoneBook {
         public static void main(String args[]){
