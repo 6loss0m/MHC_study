@@ -1,5 +1,8 @@
 import java.util.*;
 
+/*
+    시간복잡도: O(n^2) 
+ */
 public class BestAlbum2 {
     public static void main(String args[]) {
         String[] genres = {"classic", "pop", "classic", "classic", "pop"};
