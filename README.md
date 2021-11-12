@@ -7,8 +7,8 @@
  @jsh9057
 # 스터디 벌칙판 ( 엉덩이로 아이디 쓰기 )
 - 6loss0m  ❤ ❤ 
-- hyewon711  ❤ ❤ 
-- gzzjk159  ❤ 🤍
+- hyewon711  ❤ 🤍
+- gzzjk159  ❤ ❤
 - jsh9057  ❤ ❤ 
 # [스터디과제]
 > 파이썬을 우리 친구로!
@@ -59,3 +59,9 @@
    - https://programmers.co.kr/learn/courses/30/parts/12263
 2. 프로그래머스 해시 풀어온거 시간복잡도 계산해오기
 3. 동적계획법 발표(은영)
+
+### 2021.11.11 ~ 2021.11.19
+1. 프로그래머스 DFS/BFS (2문제 이상 무조건 풀어오기)
+   - https://programmers.co.kr/learn/courses/30/parts/12421
+2. 프로그래머스 동적계획법 풀어온거 시간복잡도 계산해오기
+3. DFS/BFS 발표(승현)
