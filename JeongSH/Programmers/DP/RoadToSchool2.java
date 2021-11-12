@@ -3,7 +3,8 @@ import java.util.Arrays;
 /*
     topDown(n,m) -> t(n,m) 으로 표기.
     해당 문제의 점화식을 세워보면
-    t(n,m)=t(n-1)+t(m-1)
+    t(n,m)=t(n-1,m)+t(n,m-1)
+
     이전의 방식으로 시간초과가 떴기때문에 시간복잡도를 낮추기 위해
     boolean[][] DICT 를 이용해서 이미 탐색했던 길이라면 바로 t(y,x) 값을 리턴하게 함.
     int[][] MAP 은 각각의 좌표로 갈 수 있는 경우의 수를 넣음.
