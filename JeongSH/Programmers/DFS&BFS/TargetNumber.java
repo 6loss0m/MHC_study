@@ -2,9 +2,9 @@
     dfs 로 풀어보았습니다.
  */
 public class TargetNumber {
-    static int MAX_DEPTH;
-    static int TARGET;
-    static int answer;
+
+    static int MAX_DEPTH,TARGET,answer;
+
     public static void main(String args[]){
         int[] numbers = {1,1,1,1,1};
         int target = 3;
