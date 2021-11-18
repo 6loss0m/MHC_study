@@ -7,6 +7,8 @@ import java.util.Comparator;
     dfs 로 풀어보았습니다.
     dfs 로 짜면 보통 코드 작성이 간결하여 dfs 로 풀게되는듯 합니다..
 
+    시간복잡도 : O(V+E)
+
  */
 
 
@@ -16,7 +18,7 @@ public class TravelRoute {
         String[] answer;
 
         Boolean[] visit = new Boolean[tickets.length];                              // 방문확인 배열
-        Arrays.fill(visit,false);                                               // visit 배열  초기화
+        Arrays.fill(visit,false);                                                   // visit 배열  초기화
         ArrayList<String> route;                                                    // 경로를 담을 arraylist
         Comparator<String[]> comparator = new Comparator<String[]>() {              // 여러 경로가 존재한다면 알파벳 오름차순으로 경로를 만들어야하므로
             @Override                                                               // tickets 를 비교하기위한 익명클래스
