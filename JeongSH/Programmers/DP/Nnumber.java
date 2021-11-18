@@ -4,6 +4,8 @@ dfs를 사용하여 풀었습니다.
 answer은 depth를 나타냅니다. (N을 몇 번 사용하였는가)
 ex) N=5 , number=12    :     answer == depth == 4
 
+시간복잡도: T(n)= 4n^2 =O(2^n)
+
  */
 
 
