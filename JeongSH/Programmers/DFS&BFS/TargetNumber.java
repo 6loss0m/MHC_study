@@ -1,5 +1,6 @@
 /*
     dfs 로 풀어보았습니다.
+    T(n) = 2^n = O(2^n)
  */
 public class TargetNumber {
 
