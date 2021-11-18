@@ -4,7 +4,7 @@
     이유: worst-case dfs 시간복잡도.
     모든 길을 전부 들어가서 answer 값을 ++ 하는 방식.
 
-    시간복잡도:T(n) = 2^n = O(2^n)
+    시간복잡도:T(n) = O(V+E)
 
  */
 public class RoadToSchool {
