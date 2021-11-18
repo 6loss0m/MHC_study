@@ -4,6 +4,8 @@
     이유: worst-case dfs 시간복잡도.
     모든 길을 전부 들어가서 answer 값을 ++ 하는 방식.
 
+    시간복잡도:T(n) = 2^n = O(2^n)
+
  */
 public class RoadToSchool {
     static int DIV_VALUE = 1000000007;
