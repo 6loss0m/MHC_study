@@ -4,7 +4,9 @@ import java.util.Queue;
 /*
     
     bfs 로 풀이해봤습니다.
-     
+
+    시간복잡도: O(V+E)
+
  */
 
 
