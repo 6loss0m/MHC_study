@@ -7,6 +7,8 @@
     무조건 0번째 집을 털경우,(마지막 집은 못 텀.)
     무조건 0번째 집을 안 털경우.
 
+    시간복잡도: T(n) = n = O(n)
+
  */
 public class Thievery {
     public static void main(String args[]){
