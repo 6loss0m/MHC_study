@@ -15,6 +15,8 @@
     (7+3) (7+8)
     (7+3+8) (Max((7+3),(7+8))+1) (7+8) 가 됩니다.
 
+    시간복잡도: T(n) = n^2 = O(n^2)
+
  */
 public class Triangle {
     public static void main(String args[]) {
