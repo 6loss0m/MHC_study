@@ -13,6 +13,8 @@ import java.util.Arrays;
     1 0 1 2
     1 1 2 4
 
+    DFS를 총 모든 정점인 V번 탐색하고 DFS의 정점마다 인접한 노드 E번을 검사하므로  O(V+E)
+    시간복잡도: T(n)= O(V+E)
  */
 
 public class RoadToSchool2 {
