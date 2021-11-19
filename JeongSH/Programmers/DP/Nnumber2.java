@@ -26,6 +26,8 @@ import java.util.Set;
             ...
             ..
             .
+
+    시간복잡도: T(n)= n^4 + 2n = O(n^4)
             
  */
 public class Nnumber2 {
