@@ -26,3 +26,4 @@ def solution(N, number):
         if number in dp[i]:
             return i+1 # 정답 출력
     return -1
+# 시간 복잡도 O(n^4)인거 같습니다.
