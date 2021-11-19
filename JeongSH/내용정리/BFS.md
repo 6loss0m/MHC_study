@@ -13,7 +13,7 @@
 
 위 1번과 2번을 반복하면 됩니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1feff521-0bf8-491b-a3d4-7e1623ad4639/Untitled.png)
+![bfs](https://user-images.githubusercontent.com/31503178/142599368-0d38acb8-eaf6-4ef5-a9e9-d0806cc2ff03.png)
 
 동작 방식을 간단히 설명해 보겠습니다.
 
