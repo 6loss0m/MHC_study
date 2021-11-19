@@ -8,3 +8,4 @@ def solution(triangle):
             else:
                 triangle[row][idx] += max(triangle[row-1][idx-1], triangle[row-1][idx])
     return max(triangle[-1])
+# 선형 for문 이중이므로 O(n^2)인거 같습니다. 
