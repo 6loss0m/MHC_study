@@ -1,4 +1,4 @@
-def solution(number, k):
+def solution(number, k): #시간 복잡도 O(n^2)
     answer = ''
     for i in number:
         #맨 뒤에 값과 비교, i가 더 클 경우

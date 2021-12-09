@@ -1,4 +1,4 @@
-def solution(name):
+def solution(name): #시간 복잡도 O(n^2)
     answer = 0
     idx = 0
     min_name = [min(ord(i) - ord('A'), ord('Z') - ord(i) + 1) for i in name]

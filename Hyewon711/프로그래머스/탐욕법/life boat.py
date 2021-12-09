@@ -1,4 +1,4 @@
-def solution(people, limit):
+def solution(people, limit): #시간 복잡도 O(n)
     answer = 0
     people.sort()
 
