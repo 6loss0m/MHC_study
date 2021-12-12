@@ -17,3 +17,5 @@ def solution(n, computers):
                     visited[i] = 1
         answer += 1
     return answer
+
+# while문 하나당 n^1, for문 하나당 n^1 이기 때문에 n^3라고 생각합니다.
