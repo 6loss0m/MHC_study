@@ -89,3 +89,10 @@
 1. 프로그래머스 "찾아라 프로그래밍 마에스터"
    - https://programmers.co.kr/learn/challenges
 2. 프로그래머스 이분탐색 시간복잡도 계산
+
+### 2021.12.16 ~ 2021.12.23
+1. 프로그래머스 완전탐색
+    - https://programmers.co.kr/learn/courses/30/parts/12230
+2. 프로그래머스 힙
+    - https://programmers.co.kr/learn/courses/30/parts/12117
+3. 푼 문제 시간복잡도 계산
