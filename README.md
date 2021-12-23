@@ -103,3 +103,4 @@
 2. 수학적인 부분 (자율) 
     - https://www.acmicpc.net/workbook/codeplus
 3. 시간복잡도 계산 
+4. 희망 직군 가닥 
