@@ -5,6 +5,8 @@
     dfs 로 모든 문자열 조합을 뽑은 뒤에,
     소수를 구하여 반환합니다.
 
+    시간복잡도 : O(V^2)
+
  */
 
 import java.util.Arrays;
