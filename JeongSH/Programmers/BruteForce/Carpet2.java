@@ -8,6 +8,8 @@
 
     위 조건을 만족하는 가로를 계속 늘려 확인 해봄.
 
+    시간복잡도 : O(n)
+
 
  */
 import java.util.Arrays;
