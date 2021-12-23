@@ -3,6 +3,8 @@
 
     간단한 구현문제.
 
+    시간복잡도 : O(n)
+
  */
 
 import java.util.ArrayList;
