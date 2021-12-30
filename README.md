@@ -6,9 +6,9 @@
  @gzzjk159
  @jsh9057
 # 스터디 벌칙판 ( 엉덩이로 아이디 쓰기 )
-- 6loss0m  ❤ ❤ ❤
-- hyewon711  ❤ ❤ 🤍
-- gzzjk159  ❤ ❤ ❤
+- 6loss0m  ❤ ❤ 🤍
+- hyewon711  ❤ 🤍 🤍
+- gzzjk159  ❤ ❤ 🤍
 - jsh9057  ❤ ❤ ❤
 # [스터디과제]
 > 코딩을 세손가락으로 완성할 수 있을때 !
@@ -84,3 +84,15 @@
 2. 프로그래머스 탐욕법 시간복잡도 계산
 3. 이분탐색 발표(혜원)
 4. 한컴타자 연습 😁
+
+### 2021.12.09 ~ 2021.12.16
+1. 프로그래머스 "찾아라 프로그래밍 마에스터"
+   - https://programmers.co.kr/learn/challenges
+2. 프로그래머스 이분탐색 시간복잡도 계산
+
+### 2021.12.16 ~ 2021.12.23
+1. 프로그래머스 완전탐색
+    - https://programmers.co.kr/learn/courses/30/parts/12230
+2. 프로그래머스 힙
+    - https://programmers.co.kr/learn/courses/30/parts/12117
+3. 푼 문제 시간복잡도 계산
