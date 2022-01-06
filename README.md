@@ -96,3 +96,19 @@
 2. 프로그래머스 힙
     - https://programmers.co.kr/learn/courses/30/parts/12117
 3. 푼 문제 시간복잡도 계산
+
+### 2021.12.23 ~ 2021.12.30
+1. 프로그래머스 2019 카카오 개발자 겨울 인턴십
+    - https://programmers.co.kr/learn/challenges
+2. 수학적인 부분 (자율) 
+    - https://www.acmicpc.net/workbook/codeplus
+3. 시간복잡도 계산 
+4. 희망 직군 가닥 
+
+### 2021.12.30 ~ 2022.01.06
+1. 프로그래머스 2020 카카오 인턴십
+    - https://programmers.co.kr/learn/challenges
+2. 수학적인 부분 (자율) 
+    - https://www.acmicpc.net/workbook/codeplus
+3. 시간복잡도 계산
+4. 2022년 목표 ( 새해기념 🐯 30초 이내 발표 )
