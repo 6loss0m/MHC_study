@@ -112,3 +112,12 @@
     - https://www.acmicpc.net/workbook/codeplus
 3. 시간복잡도 계산
 4. 2022년 목표 ( 새해기념 🐯 30초 이내 발표 )
+
+### 2022.01.06 ~ 2022.01.13
+1. 백준 1463, 11726, 2751, 11650, 11651 (DP, 그외) 풀어오기 (어떤 유형인지 분석)
+    - https://www.acmicpc.net/
+2. 수학적인 부분 (자율) 
+    - https://www.acmicpc.net/workbook/codeplus
+3. 시간복잡도 계산
+4. 개인 수련
+    - https://solved.ac/problems/level
