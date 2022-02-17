@@ -128,3 +128,4 @@
 2. 수학적인 부분 (자율)
     - https://www.acmicpc.net/workbook/codeplus
 3. 시간복잡도 계산
+4. 영화 감상문 써오기 (승현)
