@@ -136,7 +136,7 @@
 
 ### 2022.03.03 ~ 2022.03.10
 1. 백준 10844, 11057, 2193, 9465, 2156, 11053, 11055, 11722, 11054, 1912
-   - https://www.acmicpc.net/
+   - https://www.acmicpc.net/problem/
 2. 시간복잡도 계산
 3. 수학적인 부분 (자율)
     - https://www.acmicpc.net/workbook/codeplus
