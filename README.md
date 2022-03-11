@@ -96,3 +96,47 @@
 2. 프로그래머스 힙
     - https://programmers.co.kr/learn/courses/30/parts/12117
 3. 푼 문제 시간복잡도 계산
+
+### 2021.12.23 ~ 2021.12.30
+1. 프로그래머스 2019 카카오 개발자 겨울 인턴십
+    - https://programmers.co.kr/learn/challenges
+2. 수학적인 부분 (자율) 
+    - https://www.acmicpc.net/workbook/codeplus
+3. 시간복잡도 계산 
+4. 희망 직군 가닥 
+
+### 2021.12.30 ~ 2022.01.06
+1. 프로그래머스 2020 카카오 인턴십
+    - https://programmers.co.kr/learn/challenges
+2. 수학적인 부분 (자율) 
+    - https://www.acmicpc.net/workbook/codeplus
+3. 시간복잡도 계산
+4. 2022년 목표 ( 새해기념 🐯 30초 이내 발표 )
+
+### 2022.01.06 ~ 2022.01.13
+1. 백준 1463, 11726, 2751, 11650, 11651 (DP, 그외) 풀어오기 (어떤 유형인지 분석)
+    - https://www.acmicpc.net/
+2. 수학적인 부분 (자율) 
+    - https://www.acmicpc.net/workbook/codeplus
+3. 시간복잡도 계산
+4. 개인 수련
+    - https://solved.ac/problems/level
+### 2022.01.13 ~ 2022.02.17
+> 스터디 겨울방학
+### 2022.02.17 ~ 2022.02.24
+1. 백준 11727, 9095, 2557, 1000, 2558 (DP, 그외) 풀어오기 (어떤 유형인지 분석)
+2. 수학적인 부분 (자율)
+    - https://www.acmicpc.net/workbook/codeplus
+3. 시간복잡도 계산
+4. 영화 감상문 써오기 (승현)
+
+### 2022.02.24 ~ 2022.03.03
+1. 자율 공부
+2. 공부한거 가져오기
+
+### 2022.03.03 ~ 2022.03.10
+1. 백준 10844, 11057, 2193, 9465, 2156, 11053, 11055, 11722, 11054, 1912
+   - https://www.acmicpc.net/problem/
+2. 시간복잡도 계산
+3. 수학적인 부분 (자율)
+    - https://www.acmicpc.net/workbook/codeplus
