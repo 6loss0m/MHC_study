@@ -14,8 +14,11 @@ for _ in range(n): # 입력받은 테스트 케이스 개수만큼 반복
     case = list(map(int,input().split())) # 테스트 케이스 입력
     ans = 0 # 최대공약수의 합을 저장할 ans 초기화
 
-    for i in range(1, len(case)-1): # 1부터 입력한 테스트케이스 개수 -1 만큼 반복, 마지막 테스트케이스와 마지막 직전 테스트케이스를 비교해야하므로 len(case)-1
-        for j in range(i+1, len(case)): # i+1 부터 입력한 테스트케이스 개수만큼 반복
-            ans += (gcd(case[j], case[i]))
+    for i in range(1, len(case)): # 1부터 인 이유 : 0은 수의 개수가 입력되었기 때문
+        for j in range(i+1, len(case)): # 비교 대상 (쌍을 이루는 대상)
+            if case[i] < case[j]:
+                ans += gcd(case[i], case[j])
+            else:
+                ans += gcd(case[j], case[i])
             # case에 저장된 테스트케이스 값들을 gcd 함수를 통해 구해진 최대공약수를 ans에 합
     print(ans) # 더해진 ans 값이 최대공약수들의 합
