@@ -1,15 +1,16 @@
 # 괄호
 import sys
-
+# (
+# )
 def sol(op):
     stack = []
     top = -1
     for i in range(len(op)) :
         #print(i,op[i],top,stack)
-        if op[i] == '(':
+        if op[i] == '(': # push
             top += 1
             stack.append(op[i])
-        elif op[i] == ')':
+        elif op[i] == ')': # pop
             if top == -1:
                 return 'NO'
             else:
