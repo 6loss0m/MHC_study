@@ -2,7 +2,7 @@
 # https://www.acmicpc.net/problem/2133
 # 문제 : 3×N 크기의 벽을 2×1, 1×2 크기의 타일로 채우는 경우의 수를 구해보자.
 # 입력 : 첫째 줄에 N(1 ≤ N ≤ 30)이 주어진다.
-# 출력 :첫째 줄에 경우의 수를 출력한다.
+# 출력 : 첫째 줄에 경우의 수를 출력한다.
 
 # 홀수 인 경우 무조건 0
 
@@ -17,7 +17,8 @@ else:
     dp[2] = 3
     for i in range(4,n+1,2):
         dp[i] += dp[i-2] * 3
-        for j in range(i-4,0,-2):
+        #for j in range(i-4,0,-2):
+        for j in range(2,i-2,2) :
             dp[i] += dp[j] * 2
         dp[i] += 2
     print(dp[n])
