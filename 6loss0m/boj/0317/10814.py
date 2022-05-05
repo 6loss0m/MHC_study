@@ -14,4 +14,3 @@ for i in range(n):
 p.sort(key = lambda x : x[0])
 for i in p:
     print(i[0],i[1])
-

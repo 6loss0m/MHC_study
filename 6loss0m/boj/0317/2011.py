@@ -9,18 +9,13 @@
 # 25114 : "BEAAD", "YAAD", "YAN", "YKD", "BEKD", "BEAN"
 # 마지막 1글자 (4=D) : BEAAD, YAAD, YKD, BEKD
 #                    BEAA,YAA / YK, BEK
-
-
 # 마지막 2글자 (14=n) : YAN, BEAN
 #                       YA, BEA
-
-
 # 첫 1글자 (2=B) : BEAAD, BEKD, BEAN
-
 # 첫 2글자 (25=Y) : YAAD, YAN, YKD
-
 # N : 25114
 # n : [2,5,1,1,4]
+
 n = list(map(int,input()))
 #print(n)
 l = len(n)
