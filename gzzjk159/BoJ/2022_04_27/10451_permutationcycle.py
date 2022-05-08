@@ -19,6 +19,7 @@ for _ in range(t):
     num_list = list(map(int, sys.stdin.readline().strip().split()))
     num_list = deque(num_list)
     num_list.appendleft(0)
+
     for i in range(1, n+1):
         adj[i].append(num_list[i])
 
