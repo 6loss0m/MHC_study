@@ -4,7 +4,6 @@ import sys
 n, m = map(int, sys.stdin.readline().split()) # 나무 수, 가져갈 나무 길이
 arr = list(map(int, input().split())) # 나무 길이를 n개만큼 입력받는다.
 
-
 start = 0
 end = max(arr)
 
