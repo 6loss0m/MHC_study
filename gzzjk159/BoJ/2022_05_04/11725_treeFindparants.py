@@ -9,8 +9,6 @@ for i in range(n-1):
 
 visited = [0]*(n+1)
 
-arr = []
-
 def dfs(s):
     for i in graph[s]:
         if visited[i] == 0:

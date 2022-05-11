@@ -12,6 +12,7 @@ while start <= end:
     for i in tree:
         if i >= mid:
             wood += i -mid
+        #if wood >= m: break 하면 시간 초과 안남
     if wood>=m:
         start = mid + 1
     else:
