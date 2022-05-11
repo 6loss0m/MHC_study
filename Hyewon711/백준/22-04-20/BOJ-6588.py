@@ -9,8 +9,9 @@ li = [True for _ in range(num)] # 100만 만큼 True 리스트 생성
 
 # 에라토스테네스의 체로 소수 판별하기
 for i in range(2, int((num-1)**0.5)+1): # 2부터 시작해서 특정 수의 배수에 해당하는 수를 모두 지운다.
-    if li[i] : # li[i]가 True 라면
-        for j in range(i+i, num, i): # 지워지지 않은 경우 자기자신을 제외한 수부터 배수 지우기
+    # 제곱근만으로 구해지는 이유 : A = a*b 라고 가정했을 경우, a와 b 모두 제곱근A보다 클 수 없다
+    if li[i] : # li[i]가 True 라면 (소수라면)
+        for j in range(i+i, num, i): # i이후 i의 배수들을 False 판정
             li[j] = False
 
 while True:
