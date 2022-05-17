@@ -20,7 +20,7 @@ for _ in range(n - 1):
     a, b, c = map(int, input().split())
     graph[a].append([b, c])
     graph[b].append([a, c])
-
+print(graph)
 # 1번 노드에서 가장 먼 곳을 찾는다.
 distance = [-1] * (n + 1)
 distance[1] = 0
