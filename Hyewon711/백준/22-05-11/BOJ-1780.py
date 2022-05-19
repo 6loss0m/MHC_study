@@ -11,9 +11,9 @@ count = [0, 0, 0] # -1, 0, 1
 
 def cut(x,y,n):
     break_cut = False # #for문 탈출
-    check = board[x][y]
+    check = board[x][y] # 현재 종이 색
     for i in range(x, x+n):
-        if break_cut : #break_cut 이 Ture 라면 break
+        if break_cut : #break_cut 이 True 라면 break
             break
 
         for j in range(y, y+n):
