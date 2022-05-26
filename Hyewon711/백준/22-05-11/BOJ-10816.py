@@ -19,7 +19,6 @@ for i in card: # card의 중복을 미리 카운트
 for i in search :
     start = 0
     end = len(card)-1
-    find = False
     while start <= end :
         mid = (start + end) // 2
         if card[mid] > i :

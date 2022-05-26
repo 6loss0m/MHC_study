@@ -7,9 +7,10 @@ n = int(input())
 
 def draw_stars(n):
     if n==1:
-        return ['*'] # 재귀적인 방법으로 n을 1까지 도달하게 한다음 ['*']을 리턴
+        return ['*']
 
-    Stars=draw_stars(n//3)
+    Stars = draw_stars(n//3)
+    print(Stars)
     L=[]
 
     for star in Stars:

@@ -41,8 +41,6 @@ for i in search :
 # m = int(input()) # 상근이가 가지고 있는 숫자 카드인지 아닌지를 구해야 할 카드 개수
 # search = list(map(int, sys.stdin.readline().split())) # 상근이가 가지고 있는 숫자 카드인지 아닌지를 구해야 할 정수
 #
-# start = 0
-# end = max(search)
 # ans = []
 #
 # for i in range (len(card)) :
