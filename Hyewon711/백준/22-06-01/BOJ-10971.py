@@ -11,12 +11,15 @@ def combination(now, depth) :
     global res,minimum
     if depth == (city - 1) :
         #return은 연결 성분이 0일때 예외처리를 한 부분
-        if matrix[0][visit[0]] == 0 : return
+        if matrix[0][visit[0]] == 0 :
+            return
         res = matrix[0][visit[0]]
         for i in range(len(visit)-1) :
-            if matrix[visit[i]][visit[i+1]] == 0 : return
+            if matrix[visit[i]][visit[i+1]] == 0 :
+                return
             res = res + matrix[visit[i]][visit[i+1]]
-        if matrix[visit[-1]][0] == 0 : return
+        if matrix[visit[-1]][0] == 0 :
+            return
         res = res + matrix[visit[-1]][0]
 
         if minimum > res :
