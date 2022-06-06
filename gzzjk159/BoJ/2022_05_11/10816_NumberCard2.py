@@ -1,0 +1,24 @@
+import sys
+
+input = sys.stdin.readline
+
+n = int(input().strip())
+
+card_list = list(map(int, input().strip().split()))
+
+m = int(input().strip())
+
+new_list = list(map(int, input().strip().split()))
+cdic = {}
+
+for i in card_list:
+    if i in cdic:
+        cdic[i] += 1
+    else:
+        cdic[i] = 1
+
+for j in new_list:
+    if j in cdic:
+        print(cdic[j], end=" ")
+    else:
+        print(0, end=" ")
