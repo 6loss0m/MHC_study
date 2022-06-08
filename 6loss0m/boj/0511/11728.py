@@ -1,4 +1,4 @@
-#
+# 배열 합치기
 import sys
 
 N, M = map(int, sys.stdin.readline().split())
