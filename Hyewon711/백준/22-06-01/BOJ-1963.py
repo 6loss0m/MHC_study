@@ -2,7 +2,7 @@
 # 에라토스테네스의 체로 1000 이상 10000미만의 소수를 모두 구한 후 미리 저장한다.
 import sys, heapq
 
-def getPrime(arr):  # 9999까지 미리 소수여부를 저장
+def getPrime(arr):  # 9999까지 미리 소수여부를 저장 (에라토스테네스)
 
     for i in range(2,10000):
         if arr[i]:  #소수이면, r의 배수는 모두 소수가 아님
