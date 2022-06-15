@@ -12,17 +12,17 @@ public class Puzzle_1525 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = null;
 
-        String init ="";
+        StringBuilder init = new StringBuilder();
         for(int i=0; i<3; i++) {
             st = new StringTokenizer(br.readLine());
             for(int j=0; j<3; j++) {
                 int num = Integer.parseInt(st.nextToken());
-                init += num;
+                init.append(num);
             }
         }
 
-        map.put(init, 0);
-        System.out.println(bfs(init));
+        map.put(init.toString(), 0);
+        System.out.println(bfs(init.toString()));
     }
 
     static int bfs(String init) {
