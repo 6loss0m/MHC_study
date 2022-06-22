@@ -12,5 +12,6 @@ for ans in combinations(alphabet, l): # 문자열 리스트 alphabet, l개만큼
     for i in range(len(ans)):
         if ans[i] in vowels: # 모음이 포함된 경우
             vowel += 1
+
     if l-2 >= vowel >= 1 : # 자음은 최소 2개이므로 l-2 >= 모음의 개수 >= 1 로 조건을 둔다.
         print(''.join(map(str, ans))) # 문자 사이를 join으로 붙여주기
