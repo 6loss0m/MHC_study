@@ -205,3 +205,10 @@
 1. 백준 2003, 1806, 1644, 1261, 14225
    - https://www.acmicpc.net/problem/
 
+### 2022.06.22 ~ 2022.07.06
+1. 코로나 issue 
+2. 하반기 취업계획 발표
+
+### 2022.07.06 ~ 2022.07.13
+1. 프로그래머스 위클리 챌린지
+   - https://school.programmers.co.kr/learn/challenges
