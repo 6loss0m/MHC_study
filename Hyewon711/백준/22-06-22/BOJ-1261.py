@@ -3,8 +3,8 @@
 # 가중치가 0 또는 1인 그래프
 
 from collections import deque
-dx = [-1,1,0,0]
-dy = [0,0,-1,1]
+dx = [-1, 1,0, 0]
+dy = [0, 0, -1, 1]
 # 상하 좌우 탐색
 
 m, n = map(int, input().split()) # 가로 * 세로

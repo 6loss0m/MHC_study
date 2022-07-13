@@ -28,7 +28,7 @@ while left < n: # 수열을 모두 확인할때까지 반복
         sum += arr[right] # 현재 위치한 arr[right] 값을 sum에 추가
         right += 1 # 오른쪽 포인터 한칸 이동
 
-if min_length == sys.maxsize:
+if min_length == sys.maxsize : # 정수의 최대값/최솟값이 같은경우
     print(0)
 else:
     print(min_length)
