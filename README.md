@@ -6,7 +6,7 @@
  @gzzjk159
  @jsh9057
 # 스터디 벌칙판 ( 엉덩이로 아이디 쓰기 )
-- 6loss0m  ❤ ❤ 🤍
+- 6loss0m  ❤ 🤍 🤍
 - hyewon711  ❤ 🤍 🤍
 - gzzjk159  ❤ ❤ 🤍
 - jsh9057  ❤ ❤ 🤍
@@ -212,3 +212,10 @@
 ### 2022.07.06 ~ 2022.07.13
 1. 프로그래머스 위클리 챌린지
    - https://school.programmers.co.kr/learn/challenges
+   
+### 2022.07.13 ~ 2022.07.20
+1. 프로그래머스 Summer/Winter Coding(~2018)
+   - https://school.programmers.co.kr/learn/challenges
+   
+   
+
