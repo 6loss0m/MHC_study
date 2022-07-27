@@ -1,4 +1,4 @@
-package Programmers.SWCoding2018;
+package Programmers.SWCoding2018.SWC2022_07_13;
 
 public class MakePrime {
     static class Solution {
