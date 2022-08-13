@@ -1,4 +1,4 @@
-package Programmers.MonthlycodeChallenge2;
+package Programmers.MonthlycodeChallenge2.MCC2022_08_10;
 
 public class DivisorcountSum {
     public int solution(int left, int right) {
