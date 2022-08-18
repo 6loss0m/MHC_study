@@ -2,6 +2,7 @@
 # 이전에 백준에서 푼 스티커 떼는 문제랑 비슷한 것 같은데?
 # 점화식 찾기가 어렵다...
 
+sticker = [100, 1, 3, 100, 1]
 def solution(sticker):
     if len(sticker) == 1: # 스티커의 길이가 1이면 무조건 떼어내는 경우
         return sticker[0]
@@ -16,7 +17,7 @@ def solution(sticker):
         d1[i] = max(d1[i-2] + sticker[i], d1[i-1])
         # 그 후, 스티커 판을 모두 돌 때까지 최댓값을 초기화하면서 반복한다.
 
-    # 2) 첫 번째 스티커를 떼지 않은 경우
+    # 2) 첫 번째 스티커를 안뗀 경우
     for i in range(1, len(sticker)): # 첫 번째 안뗐으므로 마지막까지
         d2[i] = max(d2[i-2] + sticker[i], d2[i-1])
 
