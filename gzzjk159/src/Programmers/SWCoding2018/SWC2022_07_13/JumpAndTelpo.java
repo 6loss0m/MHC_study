@@ -1,5 +1,4 @@
-package Programmers.SWCoding2018;
-import java.util.*;
+package Programmers.SWCoding2018.SWC2022_07_13;
 
 public class JumpAndTelpo {
 
