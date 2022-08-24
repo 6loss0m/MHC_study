@@ -3,6 +3,18 @@ package BLIND_2018;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.regex.Pattern;
+/*
+    1. 문자열을 조건에 맞춰 2개씩 잘라 배열을 만들어 줍니다.
+    2. 두 배열의 교집합을 찾기위해 배열을 정렬해줍니다.
+    3. 두 배열에서 교집합의 수를 찾아줍니다.
+
+    유사도 = n(A ∪ B)/n(A ∩ B)
+    n(A ∪ B) = n(A)+n(B)-n(A ∩ B)
+
+    결과값에 65536 를 곱한 값을 반환합니다.
+    하지만, 합집합 즉 분모가 0이되면 계산할 수 없으므로 65536 를 반환합니다.
+
+ */
 
 public class News {
     public static void main(String[] args) {
