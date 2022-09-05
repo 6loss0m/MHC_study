@@ -218,17 +218,30 @@
    - https://school.programmers.co.kr/learn/challenges
    
 ### 2022.07.20 ~ 2022.07.27
-1. 프로그래머스 월칸 코드 챌린지 시즌1
+1. 프로그래머스 월간 코드 챌린지 시즌1
    - https://school.programmers.co.kr/learn/challenges
    
 ### 2022.07.27 ~ 2022.08.01
-1. 프로그래머스 월칸 코드 챌린지 시즌1
+1. 프로그래머스 월간 코드 챌린지 시즌1
    - https://school.programmers.co.kr/learn/challenges
    
 ### 2022.08.01 ~ 2022.08.10
-1. 프로그래머스 월칸 코드 챌린지 시즌2
+1. 프로그래머스 월간 코드 챌린지 시즌2
    - https://school.programmers.co.kr/learn/challenges
 
 ### 2022.08.10 ~ 2022.08.17
-1. 프로그래머스 월칸 코드 챌린지 시즌3
+1. 프로그래머스 월간 코드 챌린지 시즌3
    - https://school.programmers.co.kr/learn/challenges
+
+### 2022.08.10 ~ 2022.08.17
+1. 프로그래머스 월간 코드 챌린지 시즌3
+   - https://school.programmers.co.kr/learn/challenges
+
+### 2022.08.17 ~ 2022.08.24
+1. 프로그래머스 2018 KAKAO BLIND RECRUITMENT
+   - https://school.programmers.co.kr/learn/challenges
+   
+   ### 2022.09.01 ~ 2022.09.06
+1. 프로그래머스 2019 KAKAO BLIND RECRUITMENT
+   - https://school.programmers.co.kr/learn/challenges
+
