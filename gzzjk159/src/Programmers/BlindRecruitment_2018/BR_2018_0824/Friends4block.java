@@ -1,4 +1,4 @@
-package Programmers.BlindRecruitment_2018;
+package Programmers.BlindRecruitment_2018.BR_2018_0824;
 
 public class Friends4block {
     public int solution(int m, int n, String[] board) {
