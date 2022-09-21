@@ -1,4 +1,4 @@
-package Programmers.BlindRecruitment_2018;
+package Programmers.BlindRecruitment_2018.BR_2018_0824;
 
 public class ThanksgivingTraffic {
     public int solution(String[] lines) {
