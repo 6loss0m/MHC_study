@@ -14,7 +14,7 @@ def solution(N, stages):
         if stage != 0: # stage 비어있지 않다면
             print(stage)
             fail_cnt = stage / m # 실패율 계산 ( 도전하는 플레이어 수 / 스테이지 도달한 플레이어 수 )
-        fail[i] = fail_cnt # 스테이지별 실패율이 저장
+        fail[i] = fail_cnt # 스테이지별 실패율 저장
         m -= stage
     answer = sorted(fail, key =lambda x: fail[x], reverse =True)
     # 실패율이 같다면 작은 번호의 스테이지가 먼저 오도록 한다.

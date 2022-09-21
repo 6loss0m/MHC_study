@@ -13,7 +13,7 @@ def solution(relation):
                     break
                 else:
                     temp.append(curr)
-            else:
+            else: # for - else : break 없이 빠져나온 경우 else문 실행
                 for ck in candidate_key: # 후보키 검사
                     if set(ck).issubset(set(combi)):  # 최소성을 만족하지 않는 경우
                         # issubset : ck가 combi의 서브 set이 맞는가? (포함하는가?)
