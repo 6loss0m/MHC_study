@@ -240,8 +240,12 @@
 ### 2022.08.17 ~ 2022.08.24
 1. 프로그래머스 2018 KAKAO BLIND RECRUITMENT
    - https://school.programmers.co.kr/learn/challenges
-   
-   ### 2022.09.01 ~ 2022.09.06
+
+### 2022.08.24 ~ 2022.09.01
+1. 프로그래머스 2018 KAKAO BLIND RECRUITMENT
+   - https://school.programmers.co.kr/learn/challenges
+
+### 2022.09.01 ~ 2022.09.06
 1. 프로그래머스 2019 KAKAO BLIND RECRUITMENT
    - https://school.programmers.co.kr/learn/challenges
 
