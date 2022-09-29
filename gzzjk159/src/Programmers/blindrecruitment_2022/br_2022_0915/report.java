@@ -19,7 +19,6 @@ public class report {
             resultHash.get(str[1]).add(str[0]);
         }
 
-
         int[] answer = new int[id_list.length];
         for (int i = 0; i < answer.length; i++) {
             String user = id_list[i];
