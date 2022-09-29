@@ -245,3 +245,14 @@
 1. 프로그래머스 2019 KAKAO BLIND RECRUITMENT
    - https://school.programmers.co.kr/learn/challenges
 
+### 2022.09.06 ~ 2022.09.15
+1. 오프라인 스터디 준비
+
+### 2022.09.15 ~ 2022.09.21
+1. 오프라인 스터디 모임
+2. 프로그래머스 2022 KAKAO BLIND RECRUITMENT 
+   - https://school.programmers.co.kr/learn/challenges
+   
+### 2022.09.21 ~ 2022.09.29
+1. 프로그래머스 2021 KAKAO BLIND RECRUITMENT
+   - https://school.programmers.co.kr/learn/challenges
