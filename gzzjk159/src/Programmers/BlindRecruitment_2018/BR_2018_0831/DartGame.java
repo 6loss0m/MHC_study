@@ -50,6 +50,5 @@ public class DartGame {
         System.out.println(dg.solution("1D2S0T"));
         System.out.println(dg.solution("1S*2T*3S"));
         System.out.println(dg.solution("1D#2S*3S"));
-
     }
 }
