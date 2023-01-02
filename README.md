@@ -260,3 +260,45 @@
 ### 2022.09.21 ~ 2022.09.29
 1. 프로그래머스 2021 KAKAO BLIND RECRUITMENT
    - https://school.programmers.co.kr/learn/challenges
+
+### 2022.09.29 ~ 2022.10.05
+1. 프로그래머스 2020 카카오 블라인드 (외벽, 가사 , 블록 제외)
+   - https://school.programmers.co.kr/learn/challenges
+  
+### 2022.10.05 ~ 2022.10.19
+1. 프로그래머스 2022 KAKAO TECH INTERNSHIP (행렬과 연산 제외)
+   - https://school.programmers.co.kr/learn/challenges
+
+### 2022.10.19 ~ 2022.11.02
+> 스터디 가을방학
+
+### 2022.11.02 ~ 2022.11.09
+1. 백준
+   - 킹 https://www.acmicpc.net/problem/1063
+   - 줄자접기 https://www.acmicpc.net/problem/2597
+   - 개미 https://www.acmicpc.net/problem/3048
+   
+### 2022.11.09 ~ 2022.11.23
+1. 백준
+   - 윤정씨 https://www.acmicpc.net/problem/2422
+   - 카드놓기 https://www.acmicpc.net/problem/5568
+   - 숫자야구 https://www.acmicpc.net/problem/2503
+   
+### 2022.11.23 ~ 2022.12.01
+1. 백준
+   - 주유소 https://www.acmicpc.net/problem/13305
+   - 사다리 https://www.acmicpc.net/problem/3061
+   - 우리집엔 도서관이 있어 https://www.acmicpc.net/problem/2872
+   
+### 2022.12.01 ~ 2022.12.07
+1. 백준
+   - 늑대와 양 https://www.acmicpc.net/problem/16956
+   - 바이러스 https://www.acmicpc.net/problem/2606
+   - 촌수계산 https://www.acmicpc.net/problem/2644 
+   
+### 2022.12.07 ~ 2022.12.22
+1. 백준
+   - 돌다리 https://www.acmicpc.net/problem/12761 
+   - 침투 https://www.acmicpc.net/problem/13565 
+   - 아기 상어 2 https://www.acmicpc.net/problem/17086
+   
