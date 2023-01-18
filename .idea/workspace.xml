@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f6af089-44e1-44c6-9ad9-a300058fb3d8" name="Changes" comment="22-01-11">
-      <change beforePath="$PROJECT_DIR$/Hyewon711/백준/23-01-11/15990-1,2,3plus(5).py" beforeDir="false" afterPath="$PROJECT_DIR$/Hyewon711/백준/23-01-11/15990-1,2,3plus(5).py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hyewon711/백준/23-01-11/17212-rabbits.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hyewon711/백준/23-01-11/17212-rabbits.py" afterDir="false" />
+    <list default="true" id="5f6af089-44e1-44c6-9ad9-a300058fb3d8" name="Changes" comment="23-01-11">
+      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-01-17/15988- 1,2,3 sum (3).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-01-17/16500-String Category.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
       <recent name="C:\Users\WON\IdeaProjects\MHC_study\Hyewon711\백준\22-12-08" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.17175-fibonacchi boring">
+  <component name="RunManager" selected="Python.16500-String Category">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="CodePlus.Basic1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,7 +141,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="13565-penetration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="15988- 1,2,3 sum (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MHC_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,12 +149,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/22-12-21" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/22-12-21/13565-penetration.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17/15988- 1,2,3 sum (3).py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -162,20 +163,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="17086-baby shark" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="16500-String Category" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MHC_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/22-12-21" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/22-12-21/17086-baby shark.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17/16500-String Category.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -188,6 +186,9 @@
       <module name="MHC_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -308,11 +309,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.16500-String Category" />
+        <item itemvalue="Python.15988- 1,2,3 sum (3)" />
         <item itemvalue="Python.17175-fibonacchi boring" />
         <item itemvalue="Python.17212-rabbits" />
         <item itemvalue="Python.12761-stone bridge" />
-        <item itemvalue="Python.13565-penetration" />
-        <item itemvalue="Python.17086-baby shark" />
       </list>
     </recent_temporary>
   </component>
@@ -345,7 +346,11 @@
       <workItem from="1671806030442" duration="1269000" />
       <workItem from="1672065664802" duration="4000" />
       <workItem from="1672406005756" duration="603000" />
-      <workItem from="1673402857499" duration="3871000" />
+      <workItem from="1673402857499" duration="3908000" />
+      <workItem from="1673937855596" duration="23000" />
+      <workItem from="1673964087081" duration="1778000" />
+      <workItem from="1673965924402" duration="1472000" />
+      <workItem from="1674039269451" duration="2592000" />
     </task>
     <task id="LOCAL-00001" summary="22-11-23">
       <created>1669204366643</created>
@@ -382,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673408503639</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="23-01-11">
+      <created>1673408572472</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673408572472</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +417,8 @@
     <MESSAGE value="22-12-07" />
     <MESSAGE value="22-12-21" />
     <MESSAGE value="22-01-11" />
-    <option name="LAST_COMMIT_MESSAGE" value="22-01-11" />
+    <MESSAGE value="23-01-11" />
+    <option name="LAST_COMMIT_MESSAGE" value="23-01-11" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
