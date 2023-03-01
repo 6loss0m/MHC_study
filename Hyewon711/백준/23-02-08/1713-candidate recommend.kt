@@ -19,7 +19,7 @@ fun solution(){
         }
     )
 
-    var str = readLine()!!.split(" ") // 추천받은 순서 입력
+    var str = readLine()!!.split(" ") // 추천받은 순서 입력 2 1 4 3 5 6 2 7 2
 
     for(i in 0 until str.size) { // 0부터 str.size까지 반복문
         var student = str[i].toInt() // str에 저장된 값 int형으로 가져와서
@@ -46,6 +46,7 @@ fun solution(){
     result.sort() // 결과 오름차순 정렬
     for(a in result)
         print("$a ") // 답 출력
+
 }
 
 
