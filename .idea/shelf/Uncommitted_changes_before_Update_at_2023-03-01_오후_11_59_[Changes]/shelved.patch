@@ -1,0 +1,714 @@
+Index: JeongSH/BOJ/PS_0125/boj12789_Snack.java
+===================================================================
+diff --git a/JeongSH/BOJ/PS_0125/boj12789_Snack.java b/JeongSH/BOJ/PS_0125/boj12789_Snack.java
+deleted file mode 100644
+--- a/JeongSH/BOJ/PS_0125/boj12789_Snack.java	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
++++ /dev/null	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
+@@ -1,53 +0,0 @@
+-package BOJ.PS_0125;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.util.LinkedList;
+-import java.util.Queue;
+-import java.util.Stack;
+-/*
+-    큐와 스택을 사용하여 풀이하였습니다.
+-
+-    아이디어
+-    큐=줄 / 스택=대기
+-    1. 큐로 처음 줄을 세웁니다.
+-    2. 큐에서 사람을 꺼내 자기 순서가 맞다면, 간식을 줍니다.
+-    3. 스택에서 사람을 꺼내 자기 순서가 맞다면, 간식을 줍니다.
+-    4. 2,3 번이 둘 다 아니라면, 큐에서 스택으로 이동시켜줍니다.
+-    5. 2,3,4 를 만족하지 않는다면, "Sad" 를 출력 합니다.
+-
+-    2~5번을 반복
+-
+- */
+-
+-public class boj12789_Snack {
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        int N = Integer.parseInt(br.readLine());
+-
+-        Queue<Integer> line= new LinkedList<>();
+-        String[] input = br.readLine().split(" ");
+-        for(int i=0;i<N;i++){
+-            line.add(Integer.parseInt(input[i]));
+-        }
+-
+-        Stack<Integer> wait = new Stack<>();
+-        int time = 1;
+-        while (!line.isEmpty() || !wait.isEmpty() ){
+-
+-            if(!line.isEmpty()) {   // 2. 큐에서 사람을 꺼내 자기 순서가 맞다면, 간식을 줍니다.
+-                if (time == line.peek()) { line.poll(); time++; continue; }
+-            }
+-
+-            if(!wait.isEmpty()){    // 3. 스택에서 사람을 꺼내 자기 순서가 맞마면, 간식을 줍니다.
+-                if(time == wait.peek()){ wait.pop(); time++; continue; }
+-            }
+-
+-            if(!line.isEmpty()){ wait.push(line.poll()); continue; }    // 4. 3,4 번이 둘 다 아니라면 큐에서 스택으로 이동시켜줍니다.
+-
+-            else{ System.out.println("Sad"); return; }  // 5. 2,3,4 를 만족하지 않는다면, "Sad" 를 출력 합니다.
+-        }
+-        System.out.println("Nice");
+-    }
+-}
+Index: untitled/untitled.iml
+===================================================================
+diff --git a/untitled/untitled.iml b/untitled/untitled.iml
+deleted file mode 100644
+--- a/untitled/untitled.iml	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
++++ /dev/null	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
+@@ -1,9 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="PYTHON_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: JeongSH/BOJ/PS_0118/boj15988_Sum.java
+===================================================================
+diff --git a/JeongSH/BOJ/PS_0118/boj15988_Sum.java b/JeongSH/BOJ/PS_0118/boj15988_Sum.java
+deleted file mode 100644
+--- a/JeongSH/BOJ/PS_0118/boj15988_Sum.java	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
++++ /dev/null	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
+@@ -1,53 +0,0 @@
+-package BOJ.PS_0117;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-
+-/*
+-    dp 문제입니다.
+-    dp[N] : n 을 만드는 방법
+-    dp[N] = dp[N-1] + dp[N-2] + dp[N-3]
+-    ex)
+-    dp[5]
+-    dp[4] 를 만드는 방법 뒤에 모두 +1 을 하여 만드는 경우.
+-    do[3] 를 만드는 방법 뒤에 모두 +2 을 하여 만드는 경우.
+-    do[2] 를 만드는 방법 뒤에 모두 +3 을 하여 만드는 경우.
+-
+-    * 계산과정에서 int 범위를 넘길 수 있기 때문에 모든 계산과정에 나머지 연산을 해야합니다.
+-    dp[i]=(dp[i-1]+dp[i-2]+dp[i-3])%MOD  -> x
+-
+-    dp[i]=(dp[i]+dp[i-1])%MOD       -> o
+-    dp[i]=(dp[i]+dp[i-2])%MOD
+-    ..
+-
+- */
+-
+-
+-public class boj15988_Sum {
+-    static final int MOD = 1_000_000_009;
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        int T = Integer.parseInt(br.readLine());
+-        int[] testCase = new int[T];
+-        int max = -1;
+-
+-        for(int i=0;i<T;i++){
+-            testCase[i]=Integer.parseInt(br.readLine());
+-            max = Math.max(testCase[i],max);
+-        }
+-
+-        int[] dp = new int[max+1];
+-        dp[1]=1; dp[2]=2; dp[3]=4;
+-
+-        for(int i=4;i<=max;i++){
+-            dp[i]=(dp[i]+dp[i-1])%MOD;
+-            dp[i]=(dp[i]+dp[i-2])%MOD;
+-            dp[i]=(dp[i]+dp[i-3])%MOD;
+-        }
+-
+-        for(int i=0;i<T;i++){
+-            System.out.println(dp[testCase[i]]%MOD);
+-        }
+-    }
+-}
+Index: JeongSH/BOJ/PS_0118/boj16500_String.java
+===================================================================
+diff --git a/JeongSH/BOJ/PS_0118/boj16500_String.java b/JeongSH/BOJ/PS_0118/boj16500_String.java
+deleted file mode 100644
+--- a/JeongSH/BOJ/PS_0118/boj16500_String.java	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
++++ /dev/null	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
+@@ -1,65 +0,0 @@
+-package BOJ.PS_0117;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.util.HashSet;
+-/*
+-    첫번째 풀이 : 시간초과
+-
+-    아이디어
+-    1. 앞에서부터 i 번째까지 자른 문자열이 문자열 목록에 있는지 확인합니다.
+-    2. 문자열 목록에 포함되어있다면 재귀식으로 i번 째부터 시작하는 문자열을 만들어나갑니다.
+-    ex)
+-    softwarecontest
+-    software            : 문자열 존재
+-          [7]           : boolean[7] = true
+-            func(7)     : 같은 식으로 반복
+-    ex)
+-    softwarecontest
+-    soft , software, contest
+-    func(3) 호출  : boolean[3] = true
+-        재귀식으로 탐색하지만 충족 x
+-    func(7) 호출  : boolean[7] = true
+-        충족
+-
+-    시간초과 이유
+-    재귀식으로 호출되는 모든 문자열을 자르기때문
+-
+-
+- */
+-
+-public class boj16500_String {
+-    static String S;
+-    static int len;
+-    static Boolean[] possible;
+-    static HashSet<String> A = new HashSet<>();
+-
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        S = br.readLine();
+-        int T = Integer.parseInt(br.readLine());
+-
+-        for(int t=0;t<T;t++){ A.add(br.readLine()); }
+-
+-        len = S.length();
+-        possible = new Boolean[len];
+-
+-        for(int i=1;i<=S.length();i++){
+-            String split = S.substring(0,i);
+-            if(A.contains(split)){ go(i); }
+-        }
+-        System.out.println(possible[len-1]==null? 0:1);
+-    }
+-
+-    static void go(int start){
+-        if(start>len){return;}
+-
+-        possible[start-1]=true;
+-        for(int i=start; i<=len;i++){
+-            String split = S.substring(start,i);
+-            if(A.contains(split)){ go(i); }
+-        }
+-    }
+-
+-}
+Index: JeongSH/BOJ/PS_0125/boj17952_EternalTask.java
+===================================================================
+diff --git a/JeongSH/BOJ/PS_0125/boj17952_EternalTask.java b/JeongSH/BOJ/PS_0125/boj17952_EternalTask.java
+deleted file mode 100644
+--- a/JeongSH/BOJ/PS_0125/boj17952_EternalTask.java	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
++++ /dev/null	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
+@@ -1,51 +0,0 @@
+-package BOJ.PS_0125;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.util.Stack;
+-/*
+-    스택을 사용하여 풀이하였습니다.
+-
+-    아이디어
+-    과제:1 A T / 미과제:0
+-    1: 과제가 들어오면 T-1 을합니다.
+-        1-1. 0이 된다면 과제가 끝난것이므로, 총 점수를 올려줍니다.
+-        1-2. 0이 아니라면 스택에 추가해줍니다.
+-    0: 과제 x 이므로 기존의 과제를 꺼내 T-1 을 합니다.
+-        2-1. 0이 된다면 과제가 끝난것이므로, 총 점수를 올려줍니다.
+-        2-2. 0이 아니라면 스택에 다시 추가해줍니다.
+-
+- */
+-
+-public class boj17952_EternalTask {
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        int N = Integer.parseInt(br.readLine());
+-
+-        Stack<Integer[]> stack = new Stack<>();
+-
+-        int total=0;
+-
+-        for (int i = 0; i < N; i++) {
+-            String[] split = br.readLine().split(" ");
+-            if(split[0].equals("1")){
+-                // [score, time]
+-                int score = Integer.parseInt(split[1]);
+-                int time = Integer.parseInt(split[2])-1;
+-                if(time==0){ total+= score; continue;}
+-
+-                stack.push(new Integer[]{score,time});
+-            }
+-            else if(!stack.isEmpty()) {
+-                Integer[] now = stack.pop();
+-                int score = now[0];
+-                int time = now[1]-1;
+-                if(time==0){ total+= score; continue; }
+-
+-                stack.push(new Integer[]{score,time});
+-            }
+-        }
+-        System.out.println(total);
+-    }
+-}
+Index: JeongSH/BOJ/PS_0125/boj2304_WareHouse.java
+===================================================================
+diff --git a/JeongSH/BOJ/PS_0125/boj2304_WareHouse.java b/JeongSH/BOJ/PS_0125/boj2304_WareHouse.java
+deleted file mode 100644
+--- a/JeongSH/BOJ/PS_0125/boj2304_WareHouse.java	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
++++ /dev/null	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
+@@ -1,70 +0,0 @@
+-package BOJ.PS_0125;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.util.Arrays;
+-
+-/*
+-    아이디어
+-    가장 높은 기둥을 가운데로 생각하면
+-    왼쪽은 왼쪽에서 가운데로 갈수록 높아져야하고,
+-    오른쪽은 오른쪽에서 가운데로 갈수록 높아집니다.
+-
+-    1. 왼쪽부터 maxH 까지 계산합니다.
+-    2. 오른쪽부터 maxH 까지 계산합니다.
+-    3. maxH 가 여러개 일수도 있으므로, 왼쪽 max 오른쪽 max 위치를 구하여 넓이를 계산합니다.
+-    ex)
+-            []    []
+-          [][][][][][]
+-        [][][][][][][][]
+-
+- */
+-
+-public class boj2304_WareHouse {
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        int N = Integer.parseInt(br.readLine());
+-        int[][] info = new int[N][2];   // [][0]: 위치 / [][1]:높이
+-
+-        int maxH = 0;
+-
+-        for (int i = 0; i < N; i++) {
+-            String[] split = br.readLine().split(" ");
+-            info[i][0]=Integer.parseInt(split[0]);  // 위치
+-            info[i][1]=Integer.parseInt(split[1]);  // 높이
+-            maxH = Math.max(maxH,info[i][1]);
+-        }
+-
+-        Arrays.sort(info, (o1, o2) -> o1[0]-o2[0]);
+-
+-        int preL=info[0][0];
+-        int preH=info[0][1];
+-
+-        int leftMaxPoint = 0;
+-        int total = 0;
+-        for(int i=1;i<N;i++){
+-            int L = info[i][0];
+-            int H = info[i][1];
+-            total = total + preH*(L-preL);
+-            preL = L;
+-            if(H>preH){ preH=H; }
+-            if(preH == maxH){ leftMaxPoint = L; break; }
+-        }
+-
+-        preL=info[N-1][0];
+-        preH=info[N-1][1];
+-
+-        int rightMaxPoint = N-1;
+-        for(int i=N-2; i>=0; i--){
+-            int L = info[i][0];
+-            int H = info[i][1];
+-            total = total + preH*(preL-L);
+-            preL = L;
+-            if(H>preH){ preH=H;}
+-            if(preH == maxH){ rightMaxPoint=L; break;}
+-        }
+-
+-        System.out.println(total+((rightMaxPoint-leftMaxPoint+1)*maxH));
+-    }
+-}
+Index: Hyewon711/백준/23-01-17/test.py
+===================================================================
+diff --git a/Hyewon711/백준/23-01-17/test.py b/Hyewon711/백준/23-01-17/test.py
+deleted file mode 100644
+--- a/Hyewon711/백준/23-01-17/test.py	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
++++ /dev/null	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
+@@ -1,1 +0,0 @@
+-print("Hello wolrd!")
+\ No newline at end of file
+Index: JeongSH/BOJ/PS_0118/boj16500_String2.java
+===================================================================
+diff --git a/JeongSH/BOJ/PS_0118/boj16500_String2.java b/JeongSH/BOJ/PS_0118/boj16500_String2.java
+deleted file mode 100644
+--- a/JeongSH/BOJ/PS_0118/boj16500_String2.java	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
++++ /dev/null	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
+@@ -1,44 +0,0 @@
+-package BOJ.PS_0117;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.util.HashSet;
+-
+-/*
+-    풀이1과 아이디어는 같지만
+-    중복적으로 문자열을 자르는것을 줄인 방법입니다.
+-
+-    이미 목록에 있어서
+-    true 가 된 문자열 부터 자르기때문에
+-    문자열을 자르는 횟수가 매우많이 줄어들게됩니다.
+-
+- */
+-
+-public class boj16500_String2 {
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+-        String S = br.readLine();
+-        int T = Integer.parseInt(br.readLine());
+-
+-        HashSet<String> A = new HashSet<>();
+-        int len = S.length();
+-
+-        for(int t=0;t<T;t++){ A.add(br.readLine()); }
+-
+-        Boolean[] possible = new Boolean[len+1];
+-        possible[0]=true;
+-
+-        for(int i=0;i<len; i++){
+-            int pre = i;
+-            if(possible[pre]==null){continue;}
+-            for(int j=i+1; j<=len; j++){
+-                if(A.contains(S.substring(pre,j))){ possible[j]=true; }
+-            }
+-        }
+-
+-        if(possible[len]!=null){ System.out.println(1); return;}
+-        System.out.println(0);
+-
+-    }
+-}
+Index: Hyewon711/백준/23-02-17/5212-global warming.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Hyewon711/백준/23-02-17/5212-global warming.kt b/Hyewon711/백준/23-02-17/5212-global warming.kt
+new file mode 100644
+--- /dev/null	(date 1676640386476)
++++ b/Hyewon711/백준/23-02-17/5212-global warming.kt	(date 1676640386476)
+@@ -0,0 +1,10 @@
++"""
++    5212 - 지구 온난화
++    R*C 크기의 2차원 배열, X는 땅 .은 바다
++    50년 후에는 인접한 3칸 or 4칸에 바다가 있는 땅은 모두 잠긴다.
++    50년 후의 지도는 모든 섬을 포함하는 가장 작은 직사각형이며 적어도 섬 1개는 남아있다.
++    지도 범위를 벗어나는 칸은 모두 바다이다.
++
++    X를 기준으로 4방향 탐색하면 될 것 같음
++"""
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"7ba97623-68ba-413b-8b19-deff09f98023\" name=\"Changes\" comment=\"23-01-18\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/kotlinc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Hyewon711/백준/23-01-25/12789-dokidoki.kt\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Hyewon711/백준/23-01-25/17952-assignment never ending.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/Hyewon711/백준/23-01-25/2304-warehouse polygon.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/JeongSH/BOJ/PS_0118/boj15988_Sum.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/JeongSH/BOJ/PS_0118/boj16500_String.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/JeongSH/BOJ/PS_0118/boj16500_String2.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/JeongSH/BOJ/PS_0125/boj12789_Snack.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/JeongSH/BOJ/PS_0125/boj17952_EternalTask.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/JeongSH/BOJ/PS_0125/boj2304_WareHouse.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/MHC_study.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/MHC_study.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/untitled/untitled.iml\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"DjangoConsoleOptions\" custom-start-script=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\">\r\n    <option name=\"myCustomStartScript\" value=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Setup Script\" />\r\n        <option value=\"Kotlin Worksheet\" />\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"FlaskConsoleOptions\" custom-start-script=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\">\r\n    <envs>\r\n      <env key=\"FLASK_APP\" value=\"app\" />\r\n    </envs>\r\n    <option name=\"myCustomStartScript\" value=\"import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\\nApp: %s [%s]\\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))\" />\r\n    <option name=\"myEnvs\">\r\n      <map>\r\n        <entry key=\"FLASK_APP\" value=\"app\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"RESET_MODE\" value=\"SOFT\" />\r\n  </component>\r\n  <component name=\"GithubProjectSettings\">\r\n    <option name=\"branchProtectionPatterns\">\r\n      <list>\r\n        <option value=\"main\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Hwb8aSB750JRATvoI4A3XJBAft\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;azul-1.8&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/WON/IdeaProjects/MHC_study&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\WON\\IdeaProjects\\MHC_study\\Hyewon711\\백준\\22-12-08\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.17952-assignment never ending\">\r\n    <configuration default=\"true\" type=\"DjangoTestsConfigurationType\">\r\n      <module name=\"CodePlus.Basic1\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"TARGET\" value=\"\" />\r\n      <option name=\"SETTINGS_FILE\" value=\"\" />\r\n      <option name=\"CUSTOM_SETTINGS\" value=\"false\" />\r\n      <option name=\"USE_OPTIONS\" value=\"false\" />\r\n      <option name=\"OPTIONS\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <module name=\"CodePlus.Basic1\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <module name=\"CodePlus.Basic1\" />\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"PyBehaveRunConfigurationType\" factoryName=\"Behave\">\r\n      <module name=\"CodePlus.Basic1\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"ADDITIONAL_ARGS\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"15988- 1,2,3 sum (3)\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"MHC_study\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/Hyewon711/백준/23-01-17\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Hyewon711/백준/23-01-17/15988- 1,2,3 sum (3).py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"16500-String Category\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"MHC_study\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/Hyewon711/백준/23-01-17\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Hyewon711/백준/23-01-17/16500-String Category.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"17175-fibonacchi boring\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"MHC_study\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/Hyewon711/백준/23-01-11\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Hyewon711/백준/23-01-11/17175-fibonacchi boring.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"17212-rabbits\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"MHC_study\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/Hyewon711/백준/23-01-11\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Hyewon711/백준/23-01-11/17212-rabbits.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"17952-assignment never ending\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"MHC_study\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/Hyewon711/백준/23-01-25\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Hyewon711/백준/23-01-25/17952-assignment never ending.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"PythonConfigurationType\" factoryName=\"Python\">\r\n      <module name=\"CodePlus.Basic1\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"Python.FlaskServer\">\r\n      <module name=\"CodePlus.Basic1\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"launchJavascriptDebuger\" value=\"false\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"Tox\" factoryName=\"Tox\">\r\n      <module name=\"CodePlus.Basic1\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"tests\" factoryName=\"Autodetect\">\r\n      <module name=\"CodePlus.Basic1\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"_new_additionalArguments\" value=\"&quot;&quot;\" />\r\n      <option name=\"_new_target\" value=\"&quot;&quot;\" />\r\n      <option name=\"_new_targetType\" value=\"&quot;PATH&quot;\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"tests\" factoryName=\"Doctests\">\r\n      <module name=\"CodePlus.Basic1\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"\" />\r\n      <option name=\"CLASS_NAME\" value=\"\" />\r\n      <option name=\"METHOD_NAME\" value=\"\" />\r\n      <option name=\"FOLDER_NAME\" value=\"\" />\r\n      <option name=\"TEST_TYPE\" value=\"TEST_SCRIPT\" />\r\n      <option name=\"PATTERN\" value=\"\" />\r\n      <option name=\"USE_PATTERN\" value=\"false\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.17952-assignment never ending\" />\r\n        <item itemvalue=\"Python.16500-String Category\" />\r\n        <item itemvalue=\"Python.15988- 1,2,3 sum (3)\" />\r\n        <item itemvalue=\"Python.17175-fibonacchi boring\" />\r\n        <item itemvalue=\"Python.17212-rabbits\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5f6af089-44e1-44c6-9ad9-a300058fb3d8\" name=\"Changes\" comment=\"\" />\r\n      <created>1669198934832</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1669198934832</updated>\r\n      <workItem from=\"1669198936938\" duration=\"6913000\" />\r\n      <workItem from=\"1669720353171\" duration=\"296000\" />\r\n      <workItem from=\"1669802259882\" duration=\"1256000\" />\r\n      <workItem from=\"1669803727735\" duration=\"640000\" />\r\n      <workItem from=\"1669830891882\" duration=\"4670000\" />\r\n      <workItem from=\"1669866880652\" duration=\"7017000\" />\r\n      <workItem from=\"1669876346562\" duration=\"37000\" />\r\n      <workItem from=\"1669876404824\" duration=\"689000\" />\r\n      <workItem from=\"1670078276674\" duration=\"51000\" />\r\n      <workItem from=\"1670247827977\" duration=\"2984000\" />\r\n      <workItem from=\"1670251259652\" duration=\"1176000\" />\r\n      <workItem from=\"1670253332809\" duration=\"189000\" />\r\n      <workItem from=\"1670301302292\" duration=\"26000\" />\r\n      <workItem from=\"1670305259560\" duration=\"4614000\" />\r\n      <workItem from=\"1670412828960\" duration=\"48000\" />\r\n      <workItem from=\"1670414510698\" duration=\"944000\" />\r\n      <workItem from=\"1671606366986\" duration=\"11988000\" />\r\n      <workItem from=\"1671621613621\" duration=\"6678000\" />\r\n      <workItem from=\"1671806030442\" duration=\"1269000\" />\r\n      <workItem from=\"1672065664802\" duration=\"4000\" />\r\n      <workItem from=\"1672406005756\" duration=\"603000\" />\r\n      <workItem from=\"1673402857499\" duration=\"3908000\" />\r\n      <workItem from=\"1673937855596\" duration=\"23000\" />\r\n      <workItem from=\"1673964087081\" duration=\"1778000\" />\r\n      <workItem from=\"1673965924402\" duration=\"1472000\" />\r\n      <workItem from=\"1674039269451\" duration=\"4359000\" />\r\n      <workItem from=\"1674641075601\" duration=\"5658000\" />\r\n      <workItem from=\"1674647136043\" duration=\"5335000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"22-11-23\">\r\n      <created>1669204366643</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669204366643</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"22-12-01\">\r\n      <created>1669874199501</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1669874199501</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"22-12-07\">\r\n      <created>1670331921471</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1670331921471</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"22-12-21\">\r\n      <created>1671628242277</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1671628242277</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"22-01-11\">\r\n      <created>1673408503639</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1673408503639</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"23-01-11\">\r\n      <created>1673408572472</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1673408572472</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"23-01-18\">\r\n      <created>1674042846965</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674042846965</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"22-11-23\" />\r\n    <MESSAGE value=\"22-12-01\" />\r\n    <MESSAGE value=\"22-12-07\" />\r\n    <MESSAGE value=\"22-12-21\" />\r\n    <MESSAGE value=\"22-01-11\" />\r\n    <MESSAGE value=\"23-01-11\" />\r\n    <MESSAGE value=\"23-01-18\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"23-01-18\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/MHC_study$3061_ladder.coverage\" NAME=\"3061-ladder Coverage Results\" MODIFIED=\"1669834655564\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Hyewon711/백준/22-12-01\" />\r\n    <SUITE FILE_PATH=\"coverage/16956_wolf_and_sheep_py$13565_penetration.coverage\" NAME=\"13565-penetration Coverage Results\" MODIFIED=\"1671621159470\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Hyewon711/백준/22-12-21\" />\r\n    <SUITE FILE_PATH=\"coverage/16956_wolf_and_sheep_py$16500_String_Category.coverage\" NAME=\"16500-String Category Coverage Results\" MODIFIED=\"1674646918933\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Hyewon711/백준/23-01-17\" />\r\n    <SUITE FILE_PATH=\"coverage/16956_wolf_and_sheep_py$2644_Cousin_calc.coverage\" NAME=\"2644-Cousin calc Coverage Results\" MODIFIED=\"1670330763989\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Hyewon711/백준/22-12-08\" />\r\n    <SUITE FILE_PATH=\"coverage/MHC_study$13305_oli.coverage\" NAME=\"13305-oli Coverage Results\" MODIFIED=\"1669832249406\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Hyewon711/백준/22-12-01\" />\r\n    <SUITE FILE_PATH=\"coverage/16956_wolf_and_sheep_py$17086_baby_shark.coverage\" NAME=\"17086-baby shark Coverage Results\" MODIFIED=\"1671618183463\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Hyewon711/백준/22-12-21\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c42f676fa14156fc6b702d049c7a2861c92d8900)
++++ b/.idea/workspace.xml	(date 1677682501495)
+@@ -1,20 +1,26 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="7ba97623-68ba-413b-8b19-deff09f98023" name="Changes" comment="23-01-18">
+-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-01-25/12789-dokidoki.kt" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-01-25/17952-assignment never ending.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-01-25/2304-warehouse polygon.py" afterDir="false" />
++    <list default="true" id="7ba97623-68ba-413b-8b19-deff09f98023" name="Changes" comment="23-02-08">
++      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-02-17/11504-roulette.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-02-17/11504-roulette.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-02-17/1331-knights tour.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-02-17/1331-knights tour.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-02-17/5212-global warming.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-02-17/5212-global warming.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-03-01/1051-number square.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-03-01/2548-representative natural number.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-03-01/2615-gobang.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Hyewon711/백준/23-01-17/test.py" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Hyewon711/백준/23-02-08/1713-candidate recommend.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Hyewon711/백준/23-02-08/1713-candidate recommend.kt" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/JeongSH/BOJ/PS_0118/boj15988_Sum.java" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/JeongSH/BOJ/PS_0118/boj16500_String.java" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/JeongSH/BOJ/PS_0118/boj16500_String2.java" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/JeongSH/BOJ/PS_0125/boj12789_Snack.java" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/JeongSH/BOJ/PS_0125/boj17952_EternalTask.java" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/JeongSH/BOJ/PS_0125/boj2304_WareHouse.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/MHC_study.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MHC_study.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/untitled/untitled.iml" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -78,7 +84,7 @@
+     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+   }
+ }</component>
+   <component name="RecentsManager">
+@@ -86,7 +92,7 @@
+       <recent name="C:\Users\WON\IdeaProjects\MHC_study\Hyewon711\백준\22-12-08" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Python.17952-assignment never ending">
++  <component name="RunManager" selected="Python.10434-happy prime number">
+     <configuration default="true" type="DjangoTestsConfigurationType">
+       <module name="CodePlus.Basic1" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+@@ -133,7 +139,7 @@
+       <option name="ADDITIONAL_ARGS" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="15988- 1,2,3 sum (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="10434-happy prime number" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="MHC_study" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -141,12 +147,12 @@
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-02-08" />
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17/15988- 1,2,3 sum (3).py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-02-08/10434-happy prime number.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -177,7 +183,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="17175-fibonacchi boring" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="1713-candidate recommend" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="MHC_study" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -185,12 +191,12 @@
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-02-08" />
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11/17175-fibonacchi boring.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-02-08/1713-candidate recommend.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -199,7 +205,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="17212-rabbits" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="17952-assignment never ending" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="MHC_study" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -207,12 +213,12 @@
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-25" />
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11/17212-rabbits.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-25/17952-assignment never ending.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -221,7 +227,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="17952-assignment never ending" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="5587-card chapter sg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="MHC_study" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -229,12 +235,12 @@
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-25" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-02-08" />
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-25/17952-assignment never ending.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-02-08/5587-card chapter sg.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -326,18 +332,18 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Python.10434-happy prime number" />
++        <item itemvalue="Python.1713-candidate recommend" />
++        <item itemvalue="Python.5587-card chapter sg" />
+         <item itemvalue="Python.17952-assignment never ending" />
+         <item itemvalue="Python.16500-String Category" />
+-        <item itemvalue="Python.15988- 1,2,3 sum (3)" />
+-        <item itemvalue="Python.17175-fibonacchi boring" />
+-        <item itemvalue="Python.17212-rabbits" />
+       </list>
+     </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="5f6af089-44e1-44c6-9ad9-a300058fb3d8" name="Changes" comment="" />
++      <changelist id="7ba97623-68ba-413b-8b19-deff09f98023" name="Changes" comment="23-01-25" />
+       <created>1669198934832</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+@@ -370,6 +376,19 @@
+       <workItem from="1674039269451" duration="4359000" />
+       <workItem from="1674641075601" duration="5658000" />
+       <workItem from="1674647136043" duration="5335000" />
++      <workItem from="1675228272135" duration="6137000" />
++      <workItem from="1675255042601" duration="3533000" />
++      <workItem from="1675294554886" duration="3000" />
++      <workItem from="1675294569635" duration="98000" />
++      <workItem from="1675665899540" duration="3000" />
++      <workItem from="1675824711894" duration="3128000" />
++      <workItem from="1675832539235" duration="9465000" />
++      <workItem from="1675859532411" duration="2526000" />
++      <workItem from="1676386203432" duration="9000" />
++      <workItem from="1676636967920" duration="657000" />
++      <workItem from="1676637840341" duration="4851000" />
++      <workItem from="1676642914466" duration="39000" />
++      <workItem from="1677659495404" duration="6679000" />
+     </task>
+     <task id="LOCAL-00001" summary="22-11-23">
+       <created>1669204366643</created>
+@@ -420,7 +439,28 @@
+       <option name="project" value="LOCAL" />
+       <updated>1674042846965</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="23-01-25">
++      <created>1674657214903</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1674657214903</updated>
++    </task>
++    <task id="LOCAL-00009" summary="23-02-01">
++      <created>1675294607175</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1675294607175</updated>
++    </task>
++    <task id="LOCAL-00010" summary="23-02-08">
++      <created>1675842090149</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1675842090149</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -445,7 +485,10 @@
+     <MESSAGE value="22-01-11" />
+     <MESSAGE value="23-01-11" />
+     <MESSAGE value="23-01-18" />
+-    <option name="LAST_COMMIT_MESSAGE" value="23-01-18" />
++    <MESSAGE value="23-01-25" />
++    <MESSAGE value="23-02-01" />
++    <MESSAGE value="23-02-08" />
++    <option name="LAST_COMMIT_MESSAGE" value="23-02-08" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+@@ -454,9 +497,11 @@
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+     <SUITE FILE_PATH="coverage/MHC_study$3061_ladder.coverage" NAME="3061-ladder Coverage Results" MODIFIED="1669834655564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/22-12-01" />
+     <SUITE FILE_PATH="coverage/16956_wolf_and_sheep_py$13565_penetration.coverage" NAME="13565-penetration Coverage Results" MODIFIED="1671621159470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/22-12-21" />
++    <SUITE FILE_PATH="coverage/16956_wolf_and_sheep_py$5587_card_chapter_sg.coverage" NAME="5587-card chapter sg Coverage Results" MODIFIED="1675834861698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/23-02-08" />
+     <SUITE FILE_PATH="coverage/16956_wolf_and_sheep_py$16500_String_Category.coverage" NAME="16500-String Category Coverage Results" MODIFIED="1674646918933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/23-01-17" />
+     <SUITE FILE_PATH="coverage/16956_wolf_and_sheep_py$2644_Cousin_calc.coverage" NAME="2644-Cousin calc Coverage Results" MODIFIED="1670330763989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/22-12-08" />
+     <SUITE FILE_PATH="coverage/MHC_study$13305_oli.coverage" NAME="13305-oli Coverage Results" MODIFIED="1669832249406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/22-12-01" />
++    <SUITE FILE_PATH="coverage/16956_wolf_and_sheep_py$10434_happy_prime_number.coverage" NAME="10434-happy prime number Coverage Results" MODIFIED="1675839284339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/23-02-08" />
+     <SUITE FILE_PATH="coverage/16956_wolf_and_sheep_py$17086_baby_shark.coverage" NAME="17086-baby shark Coverage Results" MODIFIED="1671618183463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/22-12-21" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/discord.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/discord.xml b/.idea/discord.xml
+new file mode 100644
+--- /dev/null	(date 1675832563053)
++++ b/.idea/discord.xml	(date 1675832563053)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DiscordProjectSettings">
++    <option name="show" value="ASK" />
++    <option name="description" value="" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Hyewon711/백준/23-02-17/11504-roulette.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Hyewon711/백준/23-02-17/11504-roulette.kt b/Hyewon711/백준/23-02-17/11504-roulette.kt
+new file mode 100644
+--- /dev/null	(date 1676638971325)
++++ b/Hyewon711/백준/23-02-17/11504-roulette.kt	(date 1676638971325)
+@@ -0,0 +1,3 @@
++"""
++    11504 - 돌려 돌려 돌림판!
++"""
+\ No newline at end of file
+diff --git a/Hyewon711/백준/23-02-17/1331-knights tour.kt b/Hyewon711/백준/23-02-17/1331-knights tour.kt
+new file mode 100644

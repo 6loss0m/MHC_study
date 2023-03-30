@@ -1,0 +1,385 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,7 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="8e1fb22d-0a87-4b09-a8e5-a3d768d6abc9" name="Default Changelist" comment="add BOJ/ PS_0118">
++    <list default="true" id="7ba97623-68ba-413b-8b19-deff09f98023" name="Changes" comment="23-01-18">
++      <change afterPath="$PROJECT_DIR$/Hyewon711/백준/23-01-17/test.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -33,6 +34,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="RESET_MODE" value="HARD" />
+   </component>
+   <component name="GithubProjectSettings">
+     <option name="branchProtectionPatterns">
+@@ -65,7 +67,7 @@
+       <recent name="C:\Users\WON\IdeaProjects\MHC_study\Hyewon711\백준\22-12-08" />
+     </key>
+   </component>
+-  <component name="RunManager">
++  <component name="RunManager" selected="Python.12761-stone bridge">
+     <configuration default="true" type="DjangoTestsConfigurationType">
+       <module name="CodePlus.Basic1" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+@@ -85,6 +87,19 @@
+       <option name="USE_OPTIONS" value="false" />
+       <option name="OPTIONS" value="" />
+       <method v="2" />
++    </configuration>
++    <configuration default="true" type="JetRunConfigurationType">
++      <module name="CodePlus.Basic1" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
++      <module name="CodePlus.Basic1" />
++      <option name="filePath" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
+     </configuration>
+     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+       <module name="CodePlus.Basic1" />
+@@ -99,20 +114,20 @@
+       <option name="ADDITIONAL_ARGS" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+-      <module name="CodePlus.Basic1" />
++    <configuration name="12761-stone bridge" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="MHC_study" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+       <envs>
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="" />
+-      <option name="IS_MODULE_SDK" value="false" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/22-12-21" />
++      <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/22-12-21/12761-stone bridge.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -121,113 +136,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration default="true" type="Python.FlaskServer">
+-      <module name="CodePlus.Basic1" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="" />
+-      <option name="IS_MODULE_SDK" value="false" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="launchJavascriptDebuger" value="false" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration default="true" type="Tox" factoryName="Tox">
+-      <module name="CodePlus.Basic1" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="" />
+-      <option name="IS_MODULE_SDK" value="false" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration default="true" type="tests" factoryName="Autodetect">
+-      <module name="CodePlus.Basic1" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="" />
+-      <option name="IS_MODULE_SDK" value="false" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="_new_additionalArguments" value="&quot;&quot;" />
+-      <option name="_new_target" value="&quot;&quot;" />
+-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration default="true" type="tests" factoryName="Doctests">
+-      <module name="CodePlus.Basic1" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="" />
+-      <option name="IS_MODULE_SDK" value="false" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="" />
+-      <option name="CLASS_NAME" value="" />
+-      <option name="METHOD_NAME" value="" />
+-      <option name="FOLDER_NAME" value="" />
+-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+-      <option name="PATTERN" value="" />
+-      <option name="USE_PATTERN" value="false" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration default="true" type="JetRunConfigurationType">
+-      <module name="CodePlus.Basic1" />
+-      <option name="VM_PARAMETERS" />
+-      <option name="PROGRAM_PARAMETERS" />
+-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+-      <option name="ALTERNATIVE_JRE_PATH" />
+-      <option name="PASS_PARENT_ENVS" value="true" />
+-      <option name="MAIN_CLASS_NAME" />
+-      <option name="WORKING_DIRECTORY" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+-      <module name="CodePlus.Basic1" />
+-      <option name="filePath" />
+-      <option name="vmParameters" />
+-      <option name="alternativeJrePath" />
+-      <option name="programParameters" />
+-      <option name="passParentEnvs" value="true" />
+-      <option name="workingDirectory" />
+-      <option name="isAlternativeJrePathEnabled" value="false" />
+-      <option name="VM_PARAMETERS" />
+-      <option name="PROGRAM_PARAMETERS" />
+-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+-      <option name="ALTERNATIVE_JRE_PATH" />
+-      <option name="PASS_PARENT_ENVS" value="true" />
+-      <option name="MAIN_CLASS_NAME" />
+-      <option name="WORKING_DIRECTORY" />
+-      <option name="filePath" />
+-      <option name="vmParameters" />
+-      <option name="alternativeJrePath" />
+-      <option name="programParameters" />
+-      <option name="passParentEnvs" value="true" />
+-      <option name="workingDirectory" />
+-      <option name="isAlternativeJrePathEnabled" value="false" />
+-      <option name="VM_PARAMETERS" />
+-      <option name="PROGRAM_PARAMETERS" />
+-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+-      <option name="ALTERNATIVE_JRE_PATH" />
+-      <option name="PASS_PARENT_ENVS" value="true" />
+-      <option name="MAIN_CLASS_NAME" />
+-      <option name="WORKING_DIRECTORY" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="12761-stone bridge" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="15988- 1,2,3 sum (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="MHC_study" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -235,12 +144,12 @@
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/22-12-21" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17" />
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/22-12-21/12761-stone bridge.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17/15988- 1,2,3 sum (3).py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -249,7 +158,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="15988- 1,2,3 sum (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="16500-String Category" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="MHC_study" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -262,7 +171,7 @@
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17/15988- 1,2,3 sum (3).py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17/16500-String Category.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -271,17 +180,20 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="16500-String Category" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="17175-fibonacchi boring" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="MHC_study" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11" />
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-17/16500-String Category.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11/17175-fibonacchi boring.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -290,7 +202,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="17175-fibonacchi boring" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="17212-rabbits" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="MHC_study" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -303,7 +215,7 @@
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11/17175-fibonacchi boring.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11/17212-rabbits.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -312,20 +224,20 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="17212-rabbits" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="MHC_study" />
++    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
++      <module name="CodePlus.Basic1" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+       <envs>
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11" />
+-      <option name="IS_MODULE_SDK" value="true" />
++      <option name="WORKING_DIRECTORY" value="" />
++      <option name="IS_MODULE_SDK" value="false" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyewon711/백준/23-01-11/17212-rabbits.py" />
++      <option name="SCRIPT_NAME" value="" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -334,6 +246,65 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
++    <configuration default="true" type="Python.FlaskServer">
++      <module name="CodePlus.Basic1" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="launchJavascriptDebuger" value="false" />
++      <method v="2" />
++    </configuration>
++    <configuration default="true" type="Tox" factoryName="Tox">
++      <module name="CodePlus.Basic1" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <method v="2" />
++    </configuration>
++    <configuration default="true" type="tests" factoryName="Autodetect">
++      <module name="CodePlus.Basic1" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="_new_additionalArguments" value="&quot;&quot;" />
++      <option name="_new_target" value="&quot;&quot;" />
++      <option name="_new_targetType" value="&quot;PATH&quot;" />
++      <method v="2" />
++    </configuration>
++    <configuration default="true" type="tests" factoryName="Doctests">
++      <module name="CodePlus.Basic1" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="" />
++      <option name="CLASS_NAME" value="" />
++      <option name="METHOD_NAME" value="" />
++      <option name="FOLDER_NAME" value="" />
++      <option name="TEST_TYPE" value="TEST_SCRIPT" />
++      <option name="PATTERN" value="" />
++      <option name="USE_PATTERN" value="false" />
++      <method v="2" />
++    </configuration>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -442,7 +413,6 @@
+         </entry>
+       </map>
+     </option>
+-    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="22-11-23" />
+@@ -458,4 +428,12 @@
+     <expand />
+     <select />
+   </component>
++  <component name="com.intellij.coverage.CoverageDataManagerImpl">
++    <SUITE FILE_PATH="coverage/MHC_study$3061_ladder.coverage" NAME="3061-ladder Coverage Results" MODIFIED="1669834655564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/22-12-01" />
++    <SUITE FILE_PATH="coverage/16956_wolf_and_sheep_py$13565_penetration.coverage" NAME="13565-penetration Coverage Results" MODIFIED="1671621159470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/22-12-21" />
++    <SUITE FILE_PATH="coverage/16956_wolf_and_sheep_py$16500_String_Category.coverage" NAME="16500-String Category Coverage Results" MODIFIED="1674646918933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/23-01-17" />
++    <SUITE FILE_PATH="coverage/16956_wolf_and_sheep_py$2644_Cousin_calc.coverage" NAME="2644-Cousin calc Coverage Results" MODIFIED="1670330763989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/22-12-08" />
++    <SUITE FILE_PATH="coverage/MHC_study$13305_oli.coverage" NAME="13305-oli Coverage Results" MODIFIED="1669832249406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/22-12-01" />
++    <SUITE FILE_PATH="coverage/16956_wolf_and_sheep_py$17086_baby_shark.coverage" NAME="17086-baby shark Coverage Results" MODIFIED="1671618183463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hyewon711/백준/22-12-21" />
++  </component>
+ </project>
+\ No newline at end of file
