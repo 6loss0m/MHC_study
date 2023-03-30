@@ -1,10 +1,7 @@
 /*
 *   1051 - 숫자 정사각형
 *   꼭짓점에 쓰여 있는 수가 모두 같은 가장 큰 정사각형을 찾는 문제
-*   3 5
-    42101
-    22100
-    22101
+*
 * */
 import kotlin.math.max
 import kotlin.math.min
