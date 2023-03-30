@@ -15,7 +15,7 @@ fun find(arr: IntArray, mid: Int): Int {
 
 fun main() = with(System.`in`.bufferedReader()) {
     val n = readLine().trim().toInt()// 상수
-    val info = readLine().trim().split(' ').map { it.toInt() }.toIntArray() // n x m 정보 입력받기, 상수
+    val info = readLine().trim().split(' ').map { it.toInt() }.toIntArray() // 상수
     info.sort()
 
     var start = 0
@@ -35,7 +35,6 @@ fun main() = with(System.`in`.bufferedReader()) {
             start = mid+1 // 중간 값 변경
         }
     }
-
     println(answer)
 }
 
